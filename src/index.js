@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TextareaResizer from 'textareaResizer.js';
+import TextareaResizer from './DynamicTextarea.js';
 
 import './index.css';
 import './normalize.css';
@@ -11,7 +11,6 @@ class Item extends React.Component {
             title: props.value,
             body: props.value,
         }
-        TextareaResizer();
         this.handleChange = this.handleChange.bind(this);
     }
 

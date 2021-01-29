@@ -71,11 +71,6 @@ textarea.list-item-header {
     height: 1.17em;
     font-weight: bold;
     font-size: 1.17em;
-    
-    text-overflow: ellipsis;
-    /* Required for text-overflow to do anything */
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 textarea.mutable {
