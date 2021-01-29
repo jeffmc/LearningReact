@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import TextareaResizer from 'textareaResizer.js';
 
 import './index.css';
 import './normalize.css';
@@ -10,7 +11,7 @@ class Item extends React.Component {
             title: props.value,
             body: props.value,
         }
-
+        TextareaResizer();
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -21,8 +22,9 @@ class Item extends React.Component {
     render() {
         return (
             <div className="list-item">
-                <input type="text" placeholder="Untitled Item" className="list-item-header mutable" value={this.state.title} onChange={this.handleChange} />
+                <textarea placeholder="Untitled Item" className="list-item-header mutable" value={this.state.title} onChange={this.handleChange} />
                 <p className="list-item-body">
+                    Body text example
                 </p>
             </div>
         )

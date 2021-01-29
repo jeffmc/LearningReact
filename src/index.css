@@ -65,10 +65,10 @@ h2.list-header {
     border-radius: 3px;
 }
 
-input[type="text"].list-item-header {
+textarea.list-item-header {
     appearance: none !important;
     width: 100%;
-    height: auto;
+    height: 1.17em;
     font-weight: bold;
     font-size: 1.17em;
     
@@ -78,14 +78,16 @@ input[type="text"].list-item-header {
     overflow: hidden;
 }
 
-input[type="text"].mutable {
+textarea.mutable {
+    resize: none;
     border: 0;
-    background-color: black;
+    background-color: red;
     color: white;
     margin: 0;
     display: block;
     padding: 0;
     outline: none;
+    overflow: hidden;
 }
 
 input[type="text"].mutable:focus {
