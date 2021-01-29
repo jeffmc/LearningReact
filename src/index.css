@@ -23,7 +23,18 @@ html,body {
     overflow-y: hidden;
 }
 
-.list-header {
+.list-container:hover {
+    border: 1px solid #bbbbbb;
+}
+
+input[type="text"].list-header {
+    width: 100%;
+    appearance: none !important;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+h2.list-header {
     margin: 0;
 }
 
@@ -56,33 +67,32 @@ html,body {
 
 input[type="text"].list-item-header {
     appearance: none !important;
+    width: 100%;
     height: auto;
+    font-weight: bold;
+    font-size: 1.17em;
     
-    outline: none;
-
     text-overflow: ellipsis;
-
     /* Required for text-overflow to do anything */
     white-space: nowrap;
     overflow: hidden;
+}
 
-    border: 1px solid transparent;
-    border-radius: 0;
+input[type="text"].mutable {
+    border: 0;
     background-color: black;
     color: white;
     margin: 0;
-    font-weight: bold;
-    font-size: 1.17em;
     display: block;
     padding: 0;
+    outline: none;
 }
 
-
-input[type="text"].list-item-header:hover {
-    border: 1px solid white;
+input[type="text"].mutable:focus {
+    outline: 1px solid white;
 }
 
 .list-item-body {
     margin: 0;
-    padding: 2px 2px;
+    padding: 0 2px;
 }

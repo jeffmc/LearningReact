@@ -21,19 +21,31 @@ class Item extends React.Component {
     render() {
         return (
             <div className="list-item">
-                <input type="text" placeholder="Untitled Item" className="list-item-header" value={this.state.title} onChange={this.handleChange} />
+                <input type="text" placeholder="Untitled Item" className="list-item-header mutable" value={this.state.title} onChange={this.handleChange} />
                 <p className="list-item-body">
-                    I'm a list item with {this.state.body}.
                 </p>
             </div>
         )
     }
 }
 class List extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: "List Title",
+        }
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({title: event.target.value});
+    }
+
     render() {
         return (
             <div className="list-container">
-                <h2 className="list-header">Title</h2>
+                <input type="text" placeholder="Untitled List" className="list-header mutable" value={this.state.title} onChange={this.handleChange} />
                 <div className="list-scroller">
                     <div className="list">
                         <Item value={~~(Math.random()*9000+1000)} />
@@ -54,11 +66,11 @@ class List extends React.Component {
         )
     }
 }
-
 class App extends React.Component {
     render() {
         return (
             <div className="container">
+                <List />
                 <List />
                 <List />
             </div>
