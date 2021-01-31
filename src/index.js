@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TextareaResizer from './DynamicTextarea.js';
+import TextareaAutosize from 'react-textarea-autosize';
 
 import './index.css';
 import './normalize.css';
@@ -21,7 +21,7 @@ class Item extends React.Component {
     render() {
         return (
             <div className="list-item">
-                <textarea placeholder="Untitled Item" className="list-item-header mutable" value={this.state.title} onChange={this.handleChange} />
+                <TextareaAutosize placeholder="Untitled Item" className="list-item-header mutable" />
                 <p className="list-item-body">
                     Body text example
                 </p>
@@ -46,7 +46,7 @@ class List extends React.Component {
     render() {
         return (
             <div className="list-container">
-                <input type="text" placeholder="Untitled List" className="list-header mutable" value={this.state.title} onChange={this.handleChange} />
+                <TextareaAutosize placeholder="Untitled List" className="list-header mutable" value={this.state.title} onChange={this.handleChange} />
                 <div className="list-scroller">
                     <div className="list">
                         <Item value={~~(Math.random()*9000+1000)} />
